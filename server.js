@@ -1,20 +1,25 @@
-var http = require('http');
-var fs = require('fs');
+const http = require('http');
+const app = require('express')();
+// const server = http.Server(app);
+// const path = require('path');
 
 
-var server = http.createServer(function(req, res) {
-	// res.statusCode = 200;
-	fs.readFile('index.html', function(err, data){
-		if(err){
-			res.setHeader('Content-Type', 'text/plain')
-			res.statusCode = 404;
-			res.end('file not found');
-		}
-		res.setHeader('Content-Type', 'text/html');
-		res.statusCode = 200;
-		res.end(data);
-	})
-});
-server.listen(3000, 'localhost', function() {
+app.get('/', function(req, res){
+	res.sendFile(__dirname+'/index.html');
+})
+
+
+app.get('/second', function(req, res){
+	res.sendFile(__dirname+'/second.html');
+})
+
+app.listen(3000, 'localhost', function() {
 	console.log('Server running');
 });
+
+
+// app.get(/)
+// app.get(/second)
+// app.get(new_article)
+
+// app.post(/new_article)
