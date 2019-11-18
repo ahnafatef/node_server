@@ -105,18 +105,18 @@ app.get('/articles', function(request,response){
     })
 
 
-  app.post('/new_article', function(request,response){
+app.post('/new_article', function(request,response){
 
-    let article = new Article(request.body)
-    article.save(function(err,data){
-      if(err){
-       return  response.status(400).json({msg: "All fields are required"})
-      }
-      return response.status(200).json({article:data})
+  let article = new Article(request.body)
+  article.save(function(err,data){
+    if(err){
+      return  response.status(400).json({msg: "All fields are required"})
+    }
+    return response.status(200).json({article:data})
 
-    })
-    
   })
+  
+})
 
 
    
