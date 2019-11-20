@@ -39,31 +39,6 @@ mongo.MongoClient.connect(url,{useNewUrlParser: true, useUnifiedTopology: true }
       db = client.db("node-cw9")
     }
   })
- 
- 
- 
-// let articles = [];
- 
-// app.get('/article/:index', function(request,response){
-//   if(articles[request.params.index]){
-//     response.render('article.ejs',{
-//       article:articles[request.params.index]
-//     })
-//   }else{
-//     response.json({msg: 'Article not found'})
-//   }
-// })
- 
- 
-// app.post('/new_article', function(req, res){
-//   SVGFEFuncAElement()
-//   console.log(req.body);
-//   articles.push(req.body);
-//     res.send('response successfully sent');
-// });
- 
-
-
 
 
 mongoose.connect(url, {useNewUrlParser:true, useUnifiedTopology: true})
