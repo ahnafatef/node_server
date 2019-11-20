@@ -1,0 +1,11 @@
+<% include ./header.ejs %>
+<h1>Articles</h1>
+<ul>
+    <% if (articles) %>
+      <% articles.forEach(function(item){ %>
+          <li><%= item.title %></li>
+      <% }) %>
+</ul>
+
+<% include ./footer.ejs %>
+
